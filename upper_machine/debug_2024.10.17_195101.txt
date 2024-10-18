@@ -1,0 +1,3 @@
+Info: create .\wav_out\mix.wav, fileid = 0
+<ERROR> mfc_jtagxfer_run fail
+<INFO> user break

@@ -1,0 +1,28 @@
+第一步：安装Miniconda3
+	Miniconda3-py311_24.7.1-0-Windows-x86_64.exe
+	
+第二步：Miniconda下创建环境  ：
+	conda info -e
+	conda create -n py3.11_torch2.3.1 python=3.11
+	conda activate py3.11_torch2.3.1
+ 
+第三步：安装onnx、matplotlib、opencv-python、tqdm模块 
+	conda install onnx 
+	pip install matplotlib    -i https://pypi.tuna.tsinghua.edu.cn/simple
+	pip install opencv-python -i https://pypi.tuna.tsinghua.edu.cn/simple
+	pip install -i https://mirrors.aliyun.com/pypi/simple/ -U numpy
+	pip install tqdm
+	pip install einops
+
+第四步：安装torch模块和Torchvision模块，win环境下在tools目录中有提供对应文件
+	Torch：torch-2.3.1+cpu-cp311-cp311-win_amd64.whl
+	Torchvision：torchvision-0.18.1+cpu-cp311-cp311-win_amd64.whl
+	运行如下命令进行安装： 
+	pip install /PATH/TO/torch-2.3.1+cpu-cp311-cp311-win_amd64.whl
+	pip install  /PATH/TO/torchvision-0.18.1+cpu-cp311-cp311-win_amd64.whl
+    	
+	
+	
+	
+	
+	

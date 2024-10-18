@@ -1,0 +1,174 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="WITIN_KWS_INNER" target="20" version="2">
+  <project Name="WITIN_DCCRN">
+    <configuration
+      JLinkExecuteCommand=""
+      JLinkScriptFileName="$(ProjectDir)/../../WTM2101_SDK/Common/Libraries/Device/WITIN/WTM2101/Script/wtm2101_4w.JLinkScript"
+      Name="Common"
+      arm_compiler_variant="gcc"
+      arm_keep_assembly="No"
+      arm_keep_preprocessor_output="No"
+      arm_linker_heap_size="1024"
+      arm_linker_stack_size="1024"
+      build_always_rebuild="No"
+      build_treat_warnings_as_errors="Yes"
+      c_additional_options_from_file=""
+      c_only_additional_options="-fsingle-precision-constant"
+      c_preprocessor_definitions="PLATFORM_RSIC_V_N307;CONFIG_$(Configuration);HSI_VALUE=24576000;HSE_VALUE=24576000"
+      c_user_include_directories="$(ProjectDir)/../../WTM2101_SDK/Common/Libraries/Device/WITIN/WTM2101/Include/;$(ProjectDir)/../../WTM2101_SDK/Common/Libraries/WTM2101_StdPeriph_Lib/inc/;$(ProjectDir)/../../WTM2101_SDK/Common/Libraries/WTM2101_Syslib/Inc/;$(ProjectDir)/../../WTM2101_SDK/Common/Libraries/WTM2101_NPU_Lib/inc/;$(ProjectDir)/../../WTM2101_SDK/Common/Libraries/NMSIS/Core/Include/;$(ProjectDir)/../../WTM2101_SDK/Common/Libraries/NMSIS/DSP/Include/;$(ProjectDir)/../../WTM2101_SDK/Common/Libraries/NMSIS/NN/Include/;$(ProjectDir)/../../WTM2101_SDK/Common/Libraries/HAL_Driver/inc/;$(ProjectDir)/../../WTM2101_SDK/Common/Libraries/WTM2101_Ucontext/Inc;$(ProjectDir)/../../WTM2101_SDK/Utilities/RTT;$(ProjectDir)/../../WTM2101_SDK/Common/Middlewares/ring_cache;$(ProjectDir)/../../WTM2101_SDK/Common/Middlewares/heap;$(ProjectDir)/../third_hardware/inc/;$(ProjectDir)/../third_software/inc/;$(ProjectDir)/../npu/;$(ProjectDir)/../alg_aec_new/inc/;$(ProjectDir)/../kws_process/inc/;$(ProjectDir)/../link/;$(ProjectDir)/../inc/;$(ProjectDir)/../spi/;$(ProjectDir)/../alg_kws/;$(ProjectDir)/../alg_kws/include/;$(ProjectDir)/../alg_gsc/;$(ProjectDir)/../alg_enc/inc/;$(ProjectDir)/../protocol_hci/;$(ProjectDir)/../AlgFramework/;$(ProjectDir)/../kws_lib/include/;$(ProjectDir)/../../WitinProgramTool_WTM2101/;$(ProjectDir)/../../WitinProgramTool_WTM2101/libNPU/;$(ProjectDir)/../Lib/;$(ProjectDir)/../Lib/inc;$(ProjectDir)/../datalink/Include;$(ProjectDir)/../datalink/Inc;$(ProjectDir)/../Lib/aec;$(ProjectDir)/../MIDDLEWARE/AW88394;$(ProjectDir)/../alg_aec_wdl/inc;$(ProjectDir)/../alg_agc/inc;$(ProjectDir)/../npu_driver/inc/;$(ProjectDir)/../third_lib/getinfo/;$(ProjectDir)/../Hotfix"
+      debug_target_connection="J-Link"
+      gcc_debugging_level="Level 3"
+      gcc_entry_point="vector_base"
+      gcc_optimization_level="Level 3 for more speed"
+      gcc_short_enum="Minimal Container Size"
+      link_dependent_projects="Yes"
+      link_include_standard_libraries="Yes"
+      link_use_linker_script_file="Yes"
+      linker_additional_files="$(ProjectDir)/../Lib/$(Configuration)/Library.a"
+      linker_output_format="bin"
+      linker_printf_fp_enabled="Float"
+      linker_printf_width_precision_supported="Yes"
+      linker_scanf_character_group_matching_enabled="No"
+      linker_section_placement_file="Setup/sram_placement_riscv.xml"
+      linker_section_placements_segments="FLASH1 RX 0x00000000 0x00100000;RAM1 RWX 0x20000000 0x00010000"
+      project_dependencies="Library"
+      project_directory=""
+      project_type="Executable"
+      rv_abi="ilp32f"
+      rv_architecture="rv32imafc"
+      speed="4000"
+      stack_size="1024"
+      target_device_name="RISC-V" />
+    <configuration
+      Name="RAM_K1_IISMIC_REALTIME_HSI24Mx2"
+      c_preprocessor_definitions="__ECLIC_PRESENT;PLATFORM_RSIC_V_N307;CONFIG_$(Configuration);HSI_VALUE=24576000;HSE_VALUE=24576000"
+      gcc_optimization_level="Level 2 for size"
+      link_linker_script_file="../Drivers/Device/WITIN/BB04P1/Script/ram.ld" />
+    <configuration
+      Name="QSPI_K1_IISMIC_REALTIME_HSI24Mx2"
+      c_preprocessor_definitions="__ECLIC_PRESENT;PLATFORM_RSIC_V_N307;CONFIG_$(Configuration);HSI_VALUE=24576000;HSE_VALUE=24576000"
+      link_linker_script_file="../Drivers/Device/WITIN/BB04P1/Script/ram_qspi.ld" />
+    <configuration
+      JLinkScriptFileName="$(ProjectDir))/../link/bb04p1_4w.JLinkScript"
+      Name="RAM_JTAG_PESQ"
+      c_preprocessor_definitions="__ECLIC_PRESENT;PLATFORM_RSIC_V_N307;CONFIG_$(Configuration);HSI_VALUE=24576000;HSE_VALUE=24576000"
+      gcc_optimization_level="None"
+      link_linker_script_file="../link/ilm_dlm.ld" />
+    <folder Name="Application/User">
+      <file file_name="common.h" />
+      <file file_name="_kiss_fft_guts.h" />
+      <file file_name="arch.h" />
+      <file file_name="opus_types.h" />
+      <file file_name="celt_lpc.h" />
+      <file file_name="../Src/celt_lpc.c" />
+      <file file_name="../Src/denoise.c" />
+      <file file_name="../Src/basic_config.c" />
+      <file file_name="../Inc/basic_config.h" />
+      <file file_name="../Src/main.c" />
+      <file file_name="../Src/kiss_fft.c" />
+      <file file_name="../Inc/kiss_fft.h" />
+      <file file_name="../Src/pitch.c" />
+      <file file_name="../Inc/pitch.h" />
+      <file file_name="../Inc/rnnoise.h" />
+      <file file_name="../Inc/tansig_table.h" />
+      <file file_name="../Src/bb04p1_hal.c" />
+    </folder>
+    <folder Name="Drivers/WTM2101_StdPeriph_Lib">
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_StdPeriph_Lib/src/afc.c" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_StdPeriph_Lib/src/audio.c" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_StdPeriph_Lib/src/dma.c" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_StdPeriph_Lib/src/fbank.c" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_StdPeriph_Lib/src/gpio.c" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_StdPeriph_Lib/src/i2c.c" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_StdPeriph_Lib/src/i2s.c" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_StdPeriph_Lib/src/npu.c" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_StdPeriph_Lib/src/pmu.c" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_StdPeriph_Lib/src/qspi.c" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_StdPeriph_Lib/src/rcc.c" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_StdPeriph_Lib/src/rtc.c" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_StdPeriph_Lib/src/spi.c" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_StdPeriph_Lib/src/timer.c" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_StdPeriph_Lib/src/uart.c" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_StdPeriph_Lib/src/wdt.c" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_StdPeriph_Lib/src/pwm.c" />
+    </folder>
+    <folder Name="third_hardware">
+      <file file_name="../third_hardware/src/audio_config.c" />
+      <file file_name="../third_hardware/src/fbank_config.c" />
+      <file file_name="../third_hardware/src/rtc_config.c" />
+      <file file_name="../third_hardware/src/uart_config.c" />
+      <file file_name="../third_hardware/src/gpio_config.c" />
+      <file file_name="../third_hardware/src/uart_rx_dma.c" />
+      <file file_name="../third_hardware/src/uart_tx_config.c" />
+    </folder>
+    <folder Name="third_software">
+      <file file_name="../../WTM2101_SDK/Common/Middlewares/ring_cache/ring_cache.c" />
+      <file file_name="../../WTM2101_SDK/Common/Middlewares/heap/heap.c" />
+      <file file_name="../third_software/src/audio_handle.c" />
+    </folder>
+    <folder Name="Drivers/Coroutine">
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_Ucontext/Src/riscv_intrinsic.c" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_Ucontext/Src/ucontext.s" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_Ucontext/Src/ucontext_c.c" />
+    </folder>
+    <folder Name="__config__">
+      <file file_name="../Inc/basic_config.h" />
+      <file file_name="../Inc/config_ram_uart_verify_hsi24mx6.h" />
+      <file file_name="../Inc/config_ram_iismic_realtime_hsi24mx4.h" />
+      <file file_name="../Inc/config_common.h" />
+      <file file_name="../Inc/config_ram_kws_spi.h" />
+      <file file_name="../Inc/config_ram_uart_pesq.h" />
+      <file file_name="../Inc/config_ram_jtag_pesq.h" />
+    </folder>
+    <folder Name="Application/Project">
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_Syslib/Src/osc_clock_calibration.c" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_Syslib/Src/wtm2101_hal.c" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_Syslib/Src/wtm2101_mmap.c" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_Syslib/Src/wtm2101_system.c" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_Syslib/Src/intexc_NUCLEI_N.S" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/WTM2101_Syslib/Src/startup_NUCLEI_N.S" />
+      <file file_name="../Src/retarget.c" />
+    </folder>
+    <folder Name="Application/NPU">
+      <file file_name="../npu/cnn_framework.c" />
+      <file file_name="../../WitinProgramTool_WTM2101/LibNPU/LibNPU.a" />
+      <file file_name="../Hotfix/riscv_abs8.h" />
+      <file file_name="../../npu_model/register.c" />
+    </folder>
+    <folder Name="HAL">
+      <file file_name="../../WTM2101_SDK/Common/Libraries/HAL_Driver/src/hal_audio.c" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/HAL_Driver/src/hal_clock.c" />
+      <file file_name="../../WTM2101_SDK/Common/Libraries/HAL_Driver/src/hal_i2s.c" />
+    </folder>
+    <folder Name="RTT">
+      <file file_name="../../WTM2101_SDK/Utilities/RTT/SEGGER_RTT.c" />
+      <file file_name="../../WTM2101_SDK/Utilities/RTT/SEGGER_RTT.h" />
+      <file file_name="../../WTM2101_SDK/Utilities/RTT/SEGGER_RTT_Conf.h" />
+      <file file_name="../../WTM2101_SDK/Utilities/RTT/SEGGER_RTT_Syscalls_SES.c" />
+    </folder>
+    <folder Name="datalink">
+      <file file_name="../datalink/Source/applink_rv32.c" />
+      <file file_name="../datalink/Source/applink_win32.c" />
+      <file file_name="../datalink/Source/crc.c" />
+      <file file_name="../datalink/Source/datalink.c" />
+      <file file_name="../datalink/Source/jtaglink_rv32.c" />
+      <file file_name="../datalink/Source/jtagxfer_ll.s" />
+    </folder>
+    <folder Name="Protocol">
+      <file file_name="../protocol_hci/protocol_hci.c" />
+      <file file_name="../protocol_hci/protocol_hci.h" />
+      <file file_name="../protocol_hci/slip.c" />
+      <file file_name="../protocol_hci/slip.h" />
+      <file file_name="../protocol_hci/wtm2101ac_protocol.c" />
+      <file file_name="../protocol_hci/wtm2101ac_protocol.h" />
+    </folder>
+    <folder Name="spi">
+      <file file_name="../spi/crc32.c" />
+      <file file_name="../spi/dspi.c" />
+      <file file_name="../spi/hash.c" />
+      <file file_name="../spi/vfs_list.c" />
+      <file file_name="../spi/spi_transfer_protocol.c" />
+    </folder>
+  </project>
+  <configuration Name="RAM_JTAG_PESQ" />
+</solution>

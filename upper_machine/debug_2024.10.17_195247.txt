@@ -1,0 +1,4 @@
+Info: create .\wav_out\mix.wav, fileid = 0
+
+Info: create .\wav_out\mix.wav, fileid = 0
+
